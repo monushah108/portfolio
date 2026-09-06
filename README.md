@@ -2,13 +2,13 @@
 
 Modern personal portfolio built with Next.js App Router, featuring project highlights, writing, and contact links with a clean, fast UI.
 
-![Portfolio screenshot](./public/screenshoot.png)
+![Portfolio screenshot](./public/screenshot.png)
 
 ## Live
 
 - Website: https://monu.tech
 - Blog: https://monu.tech/blog
-- GitHub: https://github.com/monu
+- GitHub: https://github.com/monushah108
 
 ## Key Features
 
