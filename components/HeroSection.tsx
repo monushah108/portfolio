@@ -24,7 +24,15 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div>
+        <div className="flex items-center gap-2">
+          <a
+            href="/resume.pdf"
+            download
+            className="px-3 py-2 min-h-11 inline-flex items-center bg-primary/10 text-primary text-xs rounded-md hover:bg-primary/20 transition-colors"
+          >
+            Resume
+          </a>
+
           <Link
             href="#contact"
             className="px-3 py-2 min-h-11 inline-flex items-center bg-primary/10 text-primary text-xs rounded-md hover:bg-primary/20 transition-colors"

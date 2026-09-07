@@ -1,4 +1,4 @@
-# monu.tech
+# monu portfolio
 
 Modern personal portfolio built with Next.js App Router, featuring project highlights, writing, and contact links with a clean, fast UI.
 
