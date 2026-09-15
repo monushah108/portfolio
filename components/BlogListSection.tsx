@@ -194,7 +194,7 @@ export default function BlogListSection({
                     </time>
                   </div>
                   <Link
-                    href="https://github.com/monu"
+                    href="https://github.com/monushah108"
                     target="_blank"
                     className="hover:text-foreground transition-colors"
                   >

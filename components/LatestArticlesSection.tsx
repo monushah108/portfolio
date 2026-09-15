@@ -98,7 +98,7 @@ export default function LatestArticlesSection({
                     </time>
                   </div>
                   <a
-                    href="https://github.com/monu"
+                    href="https://github.com/monushah108"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-foreground transition-colors"
