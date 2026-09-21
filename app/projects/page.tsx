@@ -28,14 +28,14 @@ export default function ProjectsPage() {
     <div>
       <section>
         <div className="mx-auto max-w-5xl border-x">
-          <div className="px-4 py-14 bg-linear-to-br from-muted/40 via-background to-muted/20">
+          <div className="px-4 py-10 sm:py-14 bg-linear-to-br from-muted/40 via-background to-muted/20">
             <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
               Projects
             </p>
-            <h1 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight">
+            <h1 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
               What I’m Building
             </h1>
-            <p className="mt-3 text-muted-foreground text-base">
+            <p className="mt-2 sm:mt-3 text-muted-foreground text-sm sm:text-base">
               Real-world projects, experiments, and systems I’m actively working
               on.
             </p>

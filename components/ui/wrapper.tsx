@@ -17,7 +17,7 @@ const Wrapper = ({
   return (
     <Component
       id={id}
-      className={clsx("max-w-4xl mx-auto px-3 md:px-5", className)}
+      className={clsx("max-w-5xl mx-auto px-2 xs:px-3 sm:px-4 md:px-6 w-full", className)}
     >
       {children}
     </Component>

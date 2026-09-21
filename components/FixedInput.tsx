@@ -56,7 +56,7 @@ export default function FixedInput() {
         initial="closed"
         animate={open ? "open" : "closed"}
         variants={containerVariants}
-        className="relative mx-auto max-w-md px-4 pb-4"
+        className="relative mx-auto max-w-md w-full px-3 xs:px-4 pb-[max(1rem,env(safe-area-inset-bottom))]"
       >
         <motion.div
           ref={ref}
@@ -70,10 +70,10 @@ export default function FixedInput() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
-              className="relative z-10 flex flex-col items-center justify-center p-6 text-center text-foreground"
+              className="relative z-10 flex flex-col items-center justify-center p-4 sm:p-6 text-center text-foreground"
             >
-              <h2 className="text-xl font-bold mb-2">AI Chat Feature</h2>
-              <p className="mb-4">
+              <h2 className="text-lg sm:text-xl font-bold mb-1.5 sm:mb-2">AI Chat Feature</h2>
+              <p className="mb-3 sm:mb-4 text-xs sm:text-sm text-muted-foreground">
                 This feature is under development. For direct contact, please
                 use the available contact options.
               </p>
@@ -83,7 +83,7 @@ export default function FixedInput() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Telegram profile"
-                  className="flex h-11 w-11 items-center justify-center border border-border/60 bg-background/70 hover:bg-accent transition-colors"
+                  className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center border border-border/60 bg-background/70 hover:bg-accent transition-colors"
                 >
                   <HugeiconsIcon icon={TelegramIcon} size={18} />
                 </a>
@@ -92,7 +92,7 @@ export default function FixedInput() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn profile"
-                  className="flex h-11 w-11 items-center justify-center border border-border/60 bg-background/70 hover:bg-accent transition-colors"
+                  className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center border border-border/60 bg-background/70 hover:bg-accent transition-colors"
                 >
                   <HugeiconsIcon icon={Linkedin01Icon} size={18} />
                 </a>
@@ -101,7 +101,7 @@ export default function FixedInput() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X profile"
-                  className="flex h-11 w-11 items-center justify-center border border-border/60 bg-background/70 hover:bg-accent transition-colors"
+                  className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center border border-border/60 bg-background/70 hover:bg-accent transition-colors"
                 >
                   <HugeiconsIcon icon={NewTwitterIcon} size={18} />
                 </a>
@@ -121,12 +121,12 @@ export default function FixedInput() {
                 onFocus={() => setOpen(true)}
                 onChange={(e) => setMessage(e.target.value)}
                 aria-label="Ask a product or collaboration question"
-                className="bg-transparent border-0 focus:ring-0 placeholder:text-muted-foreground/70"
+                className="bg-transparent border-0 focus:ring-0 placeholder:text-muted-foreground/70 text-xs sm:text-sm placeholder:truncate"
               />
               <InputGroupButton
                 type="submit"
                 size="sm"
-                className="cursor-pointer"
+                className="cursor-pointer shrink-0"
                 disabled={!message.trim()}
                 aria-label="Send message"
               >

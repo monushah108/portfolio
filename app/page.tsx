@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import AchievementsSection from "@/components/AchievementsSection";
+// import AchievementsSection from "@/components/AchievementsSection";
 import GitHubGraph from "@/components/GitHubGraph";
 import ProjectsSection from "@/components/ProjectsSection";
 import LatestArticlesSection from "@/components/LatestArticlesSection";
@@ -15,7 +15,7 @@ import { Suspense } from "react";
 export default function Page() {
   const posts = getBlogPosts();
   return (
-    <main id="main" className="space-y-0 pb-24 md:pb-0">
+    <main id="main" className="space-y-0 pb-24 sm:pb-28">
       <Header />
       <AnimatedSection>
         <section className="border-b">

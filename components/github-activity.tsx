@@ -21,21 +21,25 @@ export default function GithubActivity({
   data: Activity[];
 }) {
   return (
-    <ContributionGraph data={data} labels={{ totalCount: "{{count}} activities" }}>
-      <ContributionGraphCalendar>
-        {({ activity, dayIndex, weekIndex }) => (
-          <ContributionGraphBlock
-            activity={activity}
-            dayIndex={dayIndex}
-            weekIndex={weekIndex}
-          />
-        )}
-      </ContributionGraphCalendar>
+    <div className="w-full max-w-full overflow-hidden">
+      <ContributionGraph data={data} labels={{ totalCount: "{{count}} activities" }}>
+        <div className="relative w-full">
+          <ContributionGraphCalendar className="touch-scroll pb-2">
+            {({ activity, dayIndex, weekIndex }) => (
+              <ContributionGraphBlock
+                activity={activity}
+                dayIndex={dayIndex}
+                weekIndex={weekIndex}
+              />
+            )}
+          </ContributionGraphCalendar>
+        </div>
 
-      <ContributionGraphFooter>
-        <ContributionGraphTotalCount />
-        <ContributionGraphLegend />
-      </ContributionGraphFooter>
-    </ContributionGraph>
+        <ContributionGraphFooter className="mt-2 flex flex-col xs:flex-row items-start xs:items-center justify-between gap-2 text-xs">
+          <ContributionGraphTotalCount className="text-xs sm:text-sm" />
+          <ContributionGraphLegend className="text-xs" />
+        </ContributionGraphFooter>
+      </ContributionGraph>
+    </div>
   );
 }

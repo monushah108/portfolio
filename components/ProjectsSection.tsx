@@ -177,11 +177,11 @@ export default function ProjectsSection({
       <div className="mx-auto h-full max-w-5xl border-x">
         {showHeader && (
           <>
-            <div className="flex grow flex-col justify-center border-b bg-linear-to-br from-muted/40 via-background to-muted/20 px-4 py-16 md:items-center">
-              <h2 className="text-3xl md:text-4xl font-bold">
+            <div className="flex grow flex-col justify-center border-b bg-linear-to-br from-muted/40 via-background to-muted/20 px-4 py-10 sm:py-14 md:py-16 md:items-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
                 What I’m Building
               </h2>
-              <p className="mb-5 text-base text-muted-foreground">
+              <p className="mt-1 mb-2 text-sm sm:text-base text-muted-foreground">
                 Real-world projects with real users
               </p>
             </div>
@@ -199,48 +199,48 @@ export default function ProjectsSection({
                 index === shownProjects.length - 1 && "border-b-0",
               )}
             >
-              <div className="flex items-center justify-between gap-3 border-b bg-secondary/50 p-4 dark:bg-secondary/20">
+              <div className="flex items-center justify-between gap-3 border-b bg-secondary/50 p-3.5 sm:p-4 dark:bg-secondary/20">
                 <a
                   href={project.live || project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 text-foreground hover:text-primary"
+                  className="group flex items-center gap-2 sm:gap-3 text-foreground hover:text-primary min-w-0"
                 >
                   <HugeiconsIcon
                     icon={ExternalLink}
                     size={18}
-                    className="text-muted-foreground transition-transform rotate-0 group-hover:-rotate-45"
+                    className="shrink-0 text-muted-foreground transition-transform rotate-0 group-hover:-rotate-45"
                   />
-                  <h3 className="font-heading font-medium text-lg tracking-wider">
+                  <h3 className="font-heading font-medium text-base sm:text-lg tracking-wider truncate">
                     {project.title}
                   </h3>
                 </a>
                 <Badge
                   variant="secondary"
-                  className="rounded-full capitalize bg-border/40"
+                  className="shrink-0 rounded-full capitalize bg-border/40 text-xs"
                 >
                   {project.type}
                 </Badge>
               </div>
 
               <div className="flex flex-col md:flex-row md:items-stretch">
-                <div className="relative overflow-hidden md:w-96 md:shrink-0 border-b md:border-b-0 md:border-r border-border/60">
+                <div className="relative overflow-hidden md:w-72 lg:w-96 md:shrink-0 border-b md:border-b-0 md:border-r border-border/60">
                   <Image
                     src={project.image}
                     alt={project.title}
                     width={520}
                     height={320}
-                    className="h-64 w-full object-cover md:h-full"
-                    sizes="(min-width: 768px) 384px, 100vw"
+                    className="h-48 sm:h-56 md:h-full w-full object-cover"
+                    sizes="(min-width: 1024px) 384px, (min-width: 768px) 288px, 100vw"
                   />
                 </div>
 
-                <div className="flex flex-col justify-between gap-4">
-                  <p className="text-muted-foreground leading-relaxed text-base p-4">
+                <div className="flex flex-col justify-between gap-4 flex-1">
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base p-4">
                     {project.description}
                   </p>
                   <div className="border-t">
-                    <div className="flex">
+                    <div className="flex divide-x divide-border/60">
                       <a
                         href={
                           project.githubPrivate ? undefined : project.github
@@ -253,7 +253,7 @@ export default function ProjectsSection({
                             : `View ${project.title} on GitHub`
                         }
                         className={cn(
-                          "flex items-center gap-2 w-full h-full bg-background text-sm font-medium transition-colors py-2 border-r pl-4",
+                          "flex items-center justify-center gap-2 flex-1 bg-background text-sm font-medium transition-colors py-2.5 min-h-[44px]",
                           project.githubPrivate
                             ? "cursor-not-allowed opacity-60"
                             : "hover:bg-accent focus:outline-none focus:ring-2 focus:ring-primary",
@@ -282,7 +282,7 @@ export default function ProjectsSection({
                             : `View ${project.title} live site`
                         }
                         className={cn(
-                          "flex items-center gap-2 w-full h-full bg-background text-sm font-medium transition-colors py-2 pl-4",
+                          "flex items-center justify-center gap-2 flex-1 bg-background text-sm font-medium transition-colors py-2.5 min-h-[44px]",
                           !project.live || project.livePrivate
                             ? "cursor-not-allowed opacity-60"
                             : "hover:bg-accent focus:outline-none focus:ring-2 focus:ring-primary",
@@ -308,7 +308,7 @@ export default function ProjectsSection({
               </div>
 
               <div className="border-t">
-                <div className="flex w-full max-w-none flex-wrap items-center gap-x-3 gap-y-2 divide-x divide-border/60 px-3 stripe-bg-10">
+                <div className="flex w-full flex-wrap items-center gap-2 p-3 stripe-bg-10">
                   {project.technologies.map((tech) => {
                     if (
                       tech.iconKey &&
@@ -322,10 +322,10 @@ export default function ProjectsSection({
                           href={tech.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex h-9 w-9 items-center justify-center border-l border-r border-muted/50 bg-background px-2 transition-colors hover:bg-accent"
+                          className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-md border border-border/60 bg-background transition-all hover:bg-accent hover:border-primary/50"
                           title={tech.name}
                         >
-                          <IconComponent className="h-5 w-5" />
+                          <IconComponent className="h-4 w-4 sm:h-5 sm:w-5" />
                         </a>
                       );
                     }
@@ -337,10 +337,10 @@ export default function ProjectsSection({
         </div>
 
         {showAllLink && (
-          <div className="border-t px-4 py-6">
+          <div className="border-t px-4 py-4 sm:py-6">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors min-h-[44px]"
             >
               View all projects
               <HugeiconsIcon icon={ExternalLink} size={14} />

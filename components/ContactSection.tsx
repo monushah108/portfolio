@@ -59,9 +59,9 @@ export default function ContactSection() {
   return (
     <section id="contact">
       <div className="mx-auto h-full max-w-5xl border-x">
-        <div className="flex grow flex-col justify-center border-b bg-linear-to-br from-muted/40 via-background to-muted/20 px-4 py-16 md:items-center">
-          <h2 className="text-2xl md:text-4xl font-bold">Let&apos;s Connect</h2>
-          <p className="mb-5 text-base text-muted-foreground">
+        <div className="flex grow flex-col justify-center border-b bg-linear-to-br from-muted/40 via-background to-muted/20 px-4 py-10 sm:py-14 md:py-16 md:items-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Let&apos;s Connect</h2>
+          <p className="mt-1 mb-2 text-sm sm:text-base text-muted-foreground">
             Reach out through email or find me on social media
           </p>
         </div>
@@ -72,6 +72,8 @@ export default function ContactSection() {
           {contactItems.map((contact, index) => {
             const isLarge = contact.size === "large";
             const isMiddle = contact.label === "X (Twitter)";
+            const isRow1 = index < 2;
+            const isRightEdge = index === 1 || index === 4;
 
             return (
               <Box
@@ -95,9 +97,13 @@ export default function ContactSection() {
                           : "Reach out quickly for a chat."
                 }
                 className={cn(
-                  isLarge ? "md:col-span-2" : "",
+                  isLarge ? "md:col-span-2" : "md:col-span-1",
                   index === 1 ? "md:col-start-3" : "",
-                  contact.size === "small" ? "md:col-span-1" : "",
+                  // Mobile borders
+                  index === contactItems.length - 1 ? "border-b-0" : "border-b",
+                  // Desktop/tablet borders
+                  isRow1 ? "md:border-b" : "md:border-b-0",
+                  isRightEdge ? "md:border-r-0" : "md:border-r",
                 )}
               />
             );
@@ -138,36 +144,36 @@ function Box({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "group relative flex h-full flex-col justify-between overflow-hidden border-b transition-colors md:border-r md:border-b-0",
+        "group relative flex h-full flex-col justify-between overflow-hidden transition-colors border-border/60",
         hoverClassName,
         className,
       )}
     >
-      <div className="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 opacity-[0.08]">
+      <div className="pointer-events-none absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 opacity-[0.08]">
         <HugeiconsIcon
           icon={Icon}
-          size={72}
+          size={60}
           className="transition-transform duration-300 group-hover:scale-105 group-hover:-translate-y-1"
         />
       </div>
 
-      <div className="flex items-center gap-x-3 border-b bg-secondary/50 p-4 dark:bg-secondary/20">
+      <div className="flex items-center gap-x-3 border-b bg-secondary/50 p-3.5 sm:p-4 dark:bg-secondary/20">
         <HugeiconsIcon
           icon={Icon}
           size={18}
-          className="text-muted-foreground"
+          className="text-muted-foreground shrink-0"
         />
-        <h4 className="font-heading font-medium text-lg tracking-wider">
+        <h4 className="font-heading font-medium text-base sm:text-lg tracking-wider">
           {title}
         </h4>
       </div>
-      <div className="flex items-center gap-x-2 p-4 py-12">
-        <span className="font-medium font-mono text-sm tracking-wide">
+      <div className="flex items-center gap-x-2 p-3.5 sm:p-4 py-6 sm:py-8 md:py-10">
+        <span className="font-medium font-mono text-xs sm:text-sm tracking-wide break-all xs:break-normal">
           {value}
         </span>
       </div>
-      <div className="border-t p-4">
-        <p className="text-muted-foreground text-sm">{description}</p>
+      <div className="border-t p-3.5 sm:p-4">
+        <p className="text-muted-foreground text-xs sm:text-sm">{description}</p>
       </div>
     </a>
   );

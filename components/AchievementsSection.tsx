@@ -15,9 +15,9 @@ export default function AchievementsSection() {
     <>
       <section id="achievements">
         <div className="mx-auto h-full max-w-5xl border-x">
-          <div className="flex grow flex-col justify-center border-b bg-linear-to-br from-muted/40 via-background to-muted/20 px-4 py-16 md:items-center">
-            <h2 className="text-3xl font-bold md:text-4xl">Achievements</h2>
-            <p className="mb-5 text-base text-muted-foreground">
+          <div className="flex grow flex-col justify-center border-b bg-linear-to-br from-muted/40 via-background to-muted/20 px-4 py-10 sm:py-14 md:py-16 md:items-center">
+            <h2 className="text-2xl sm:text-3xl font-bold md:text-4xl">Achievements</h2>
+            <p className="mt-1 text-sm sm:text-base text-muted-foreground">
               Recognition that keeps me going
             </p>
           </div>
@@ -26,7 +26,7 @@ export default function AchievementsSection() {
 
           <div className="flex flex-col border-b md:flex-row md:items-stretch">
             <div
-              className="relative overflow-hidden md:w-96 md:shrink-0 border-b md:border-b-0 md:border-r border-border/60 cursor-pointer group"
+              className="relative overflow-hidden md:w-72 lg:w-96 md:shrink-0 border-b md:border-b-0 md:border-r border-border/60 cursor-pointer group"
               onClick={() => setLightboxOpen(true)}
             >
               <Image
@@ -34,8 +34,8 @@ export default function AchievementsSection() {
                 alt="THRIVE 2018 Hackathon Certificate"
                 width={520}
                 height={320}
-                className="h-64 w-full object-cover md:h-full transition-transform duration-300 group-hover:scale-105"
-                sizes="(min-width: 768px) 384px, 100vw"
+                className="h-48 sm:h-56 md:h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(min-width: 1024px) 384px, (min-width: 768px) 288px, 100vw"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/40">
                 <span className="flex items-center gap-2 rounded-full bg-background/90 px-4 py-2 text-sm font-medium opacity-0 transition-opacity duration-300 group-hover:opacity-100">

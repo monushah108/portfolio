@@ -91,13 +91,13 @@ export default function BlogPostLayout({
           </span>
         </div>
 
-        <div className="border-b bg-secondary/50 px-4 py-6 dark:bg-secondary/20">
-          <div className="space-y-3">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+        <div className="border-b bg-secondary/50 px-4 py-5 sm:py-6 dark:bg-secondary/20">
+          <div className="space-y-2 sm:space-y-3">
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight md:text-4xl">
               {title}
             </h1>
             {excerpt && (
-              <p className="text-muted-foreground text-base leading-relaxed">
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 {excerpt}
               </p>
             )}
@@ -111,16 +111,16 @@ export default function BlogPostLayout({
               alt={title}
               width={1200}
               height={630}
-              className="h-72 w-full object-cover md:h-[28rem]"
+              className="h-52 sm:h-72 md:h-[28rem] w-full object-cover"
               priority
             />
           </div>
         )}
 
-        <div className="h-10 border-b border-border/60 stripe-bg-12" />
+        <div className="h-8 sm:h-10 border-b border-border/60 stripe-bg-12" />
 
         <div className="border-b">
-          <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-muted-foreground">
             <div className="flex flex-wrap items-center gap-2">
               <a
                 href="https://github.com/monushah108"
@@ -141,11 +141,11 @@ export default function BlogPostLayout({
             </div>
 
             {tags?.length ? (
-              <div className="flex flex-wrap items-center gap-2 text-xs">
+              <div className="flex flex-wrap items-center gap-1.5 text-xs">
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-muted/40 px-2 py-0.5"
+                    className="rounded-full border border-muted/40 px-2 py-0.5 text-[11px] sm:text-xs"
                   >
                     {tag}
                   </span>
@@ -155,28 +155,28 @@ export default function BlogPostLayout({
           </div>
         </div>
 
-        <div className="px-4 py-10">
-          <article className="space-y-6 blog-content">{children}</article>
+        <div className="px-4 py-6 sm:py-10">
+          <article className="space-y-6 blog-content overflow-x-hidden">{children}</article>
         </div>
 
         <div className="border-t">
-          <div className="flex flex-col gap-4 px-4 py-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 px-4 py-5 sm:py-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-1">
               <p className="text-sm font-medium text-foreground">
                 Enjoyed this read?
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 Clap or leave a response on Medium.
               </p>
             </div>
 
             {mediumUrl ? (
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-2.5 sm:gap-3">
                 <a
                   href={mediumUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-border/60 px-4 py-2 text-sm font-medium text-foreground/90 transition-colors hover:border-primary/60 hover:text-foreground"
+                  className="inline-flex items-center justify-center rounded-full border border-border/60 px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground/90 transition-colors hover:border-primary/60 hover:text-foreground min-h-[44px]"
                 >
                   Clap on Medium
                 </a>
@@ -184,7 +184,7 @@ export default function BlogPostLayout({
                   href={`${mediumUrl}?responses=1`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-border/60 px-4 py-2 text-sm font-medium text-foreground/90 transition-colors hover:border-primary/60 hover:text-foreground"
+                  className="inline-flex items-center justify-center rounded-full border border-border/60 px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground/90 transition-colors hover:border-primary/60 hover:text-foreground min-h-[44px]"
                 >
                   Write a response
                 </a>
