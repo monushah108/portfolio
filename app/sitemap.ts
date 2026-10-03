@@ -4,7 +4,7 @@ import { blogPosts } from "@/lib/blog";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   const blogEntries = blogPosts.map((post) => ({
-    url: `https://monu.tech/blog/${post.slug}`,
+    url: `https://monushah.vercel.app/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -12,19 +12,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: "https://monu.tech",
+      url: "https://monushah.vercel.app",
       lastModified,
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://monu.tech/projects",
+      url: "https://monushah.vercel.app/projects",
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://monu.tech/blog",
+      url: "https://monushah.vercel.app/blog",
       lastModified,
       changeFrequency: "weekly",
       priority: 0.8,

@@ -2,10 +2,10 @@ export function PersonSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Ubeyid Oumer",
+    name: "monu shah",
     alternateName: ["monu", "monu"],
-    url: "https://monu.tech",
-    image: "https://monu.tech/profile.jpg",
+    url: "https://monushah.vercel.app",
+    image: "https://monushah.vercel.app/profile.jpg",
     description:
       "Student and self-taught software engineer who started coding in grade 10 and builds real-world systems across AI, Linux, open-source, and platform engineering.",
     jobTitle: "Student & Self-taught Software Engineer",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const baseMetadata: Metadata = {
-  metadataBase: new URL("https://monu.tech"),
+  metadataBase: new URL("https://monushah.vercel.app"),
 
   title: {
     default: "Monu — Full-Stack Developer & AI Builder",
@@ -16,7 +16,7 @@ export const baseMetadata: Metadata = {
   authors: [
     {
       name: "Monu",
-      url: "https://monu.tech",
+      url: "https://monushah.vercel.app",
     },
   ],
 
@@ -46,7 +46,7 @@ export const baseMetadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://monu.tech",
+    canonical: "https://monushah.vercel.app",
   },
 
   robots: {
@@ -65,7 +65,7 @@ export const baseMetadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://monu.tech",
+    url: "https://monushah.vercel.app",
     siteName: "Monu",
 
     title: "Monu — Full-Stack Developer & AI Builder",

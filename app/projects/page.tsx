@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   title: "Projects",
   description: "Selected projects and experiments by monu.",
   alternates: {
-    canonical: "https://monu.tech/projects",
+    canonical: "https://monushah.vercel.app/projects",
   },
   openGraph: {
     ...baseMetadata.openGraph,
     title: "Projects | monu",
     description: "Selected projects and experiments by monu.",
-    url: "https://monu.tech/projects",
+    url: "https://monushah.vercel.app/projects",
     type: "website",
   },
   twitter: {

@@ -40,7 +40,7 @@ export default function BlogPostLayout({
     : null;
 
   const resolvedCanonicalUrl =
-    canonicalUrl ?? (slug ? `https://monu.tech/blog/${slug}` : undefined);
+    canonicalUrl ?? (slug ? `https://monushah.vercel.app/blog/${slug}` : undefined);
 
   const structuredData: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -53,13 +53,13 @@ export default function BlogPostLayout({
     author: {
       "@type": "Person",
       name: author ?? "monu",
-      url: "https://monu.tech",
+      url: "https://monushah.vercel.app",
     },
     publisher: {
       "@type": "Person",
       name: "monu",
-      url: "https://monu.tech",
-      image: "https://monu.tech/profile.jpg",
+      url: "https://monushah.vercel.app",
+      image: "https://monushah.vercel.app/profile.jpg",
     },
     inLanguage: "en",
     keywords: tags?.length ? tags.join(", ") : undefined,

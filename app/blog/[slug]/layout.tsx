@@ -16,10 +16,10 @@ export default async function BlogPostLayout({
   const post = getBlogPosts().find((item) => item.slug === slug);
   const formattedDate = post?.date
     ? new Date(post.date).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      })
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })
     : null;
 
   return (
@@ -73,7 +73,7 @@ export default async function BlogPostLayout({
           <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-sm text-muted-foreground">
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-foreground/90">
-                {post?.author ?? "Ubeyid Oumer"}
+                {post?.author ?? "monu shah"}
               </span>
               <span className="opacity-60">•</span>
               {formattedDate && post?.date ? (

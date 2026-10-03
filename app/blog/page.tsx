@@ -10,14 +10,14 @@ export const metadata: Metadata = {
   description:
     "Writing by monu Oumer on software engineering, AI systems, Linux, self-learning, and building real-world tools.",
   alternates: {
-    canonical: "https://monu.tech/blog",
+    canonical: "https://monushah.vercel.app/blog",
   },
   openGraph: {
     ...baseMetadata.openGraph,
     title: "Blog | monu",
     description:
       "Thoughts and notes on software engineering, AI, Linux, and learning by building.",
-    url: "https://monu.tech/blog",
+    url: "https://monushah.vercel.app/blog",
     type: "website",
   },
   twitter: {

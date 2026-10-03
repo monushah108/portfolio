@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://monu.tech/sitemap.xml",
+    sitemap: "https://monushah.vercel.app/sitemap.xml",
   };
 }

@@ -6,8 +6,8 @@ Modern personal portfolio built with Next.js App Router, featuring project highl
 
 ## Live
 
-- Website: https://portfolio-tau-lime-24.vercel.app/
-- Blog: https://portfolio-tau-lime-24.vercel.app/blog
+- Website: https://monushah.vercel.app/
+- Blog: https://monushah.vercel.app/blog
 - GitHub: https://github.com/monushah108
 
 ## Key Features
