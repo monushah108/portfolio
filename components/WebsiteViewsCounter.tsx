@@ -39,7 +39,7 @@ export default function WebsiteViewsCounter() {
     function fallbackLocalViews() {
       if (typeof window !== "undefined") {
         const localKey = "monu_portfolio_local_views";
-        const current = parseInt(localStorage.getItem(localKey) || "2847", 10);
+        const current = parseInt(localStorage.getItem(localKey) || "1", 10);
         const hasViewed = sessionStorage.getItem("monu_portfolio_viewed");
         const next = hasViewed ? current : current + 1;
         localStorage.setItem(localKey, next.toString());
