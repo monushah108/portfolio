@@ -25,6 +25,12 @@ export default function Header() {
                 Home
               </Link>
               <Link
+                href="/#skills"
+                className="text-muted-foreground hover:text-foreground transition-colors py-1"
+              >
+                Skills
+              </Link>
+              <Link
                 href="/projects"
                 className="text-muted-foreground hover:text-foreground transition-colors py-1"
               >
@@ -69,6 +75,13 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                href="/#skills"
+                className="text-muted-foreground hover:text-foreground hover:bg-muted/50 px-3 py-2.5 rounded-md text-sm font-medium transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Skills
               </Link>
               <Link
                 href="/projects"

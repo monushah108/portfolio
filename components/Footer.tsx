@@ -1,13 +1,18 @@
+import WebsiteViewsCounter from "./WebsiteViewsCounter";
+
 export default function Footer() {
   return (
     <footer className="mt-14 sm:mt-20 md:mt-24">
       <div className="mx-auto h-full max-w-5xl border-x">
         <div className="border-t" />
         <div className="flex flex-col gap-4 sm:gap-6 px-4 py-4 sm:py-6">
-          <div className="flex items-center justify-center text-center">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <span className="text-xs sm:text-sm md:text-base text-muted-foreground">
               © {new Date().getFullYear()} monu. All rights reserved.
             </span>
+            <div className="flex items-center">
+              <WebsiteViewsCounter />
+            </div>
           </div>
 
           <div className="h-8 sm:h-10 border-y border-border/60 stripe-bg-12" />

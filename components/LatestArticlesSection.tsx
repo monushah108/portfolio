@@ -7,12 +7,16 @@ import type { BlogPostWithReadTime } from "@/lib/blog-posts";
 type LatestArticlesSectionProps = {
   showAllLink?: boolean;
   posts: BlogPostWithReadTime[];
+  limit?: number;
 };
 
 export default function LatestArticlesSection({
   showAllLink = true,
   posts,
+  limit = 2,
 }: LatestArticlesSectionProps) {
+  const displayedPosts = limit ? posts.slice(0, limit) : posts;
+
   return (
     <section>
       <div className="mx-auto h-full max-w-5xl border-x">
@@ -29,11 +33,11 @@ export default function LatestArticlesSection({
         <BorderSeparator />
 
         <div className="grid">
-          {posts.map((article, index) => (
+          {displayedPosts.map((article, index) => (
             <article
               key={article.slug}
               className={`flex flex-col justify-between border-b ${
-                index === posts.length - 1 ? "border-b-0" : ""
+                index === displayedPosts.length - 1 ? "border-b-0" : ""
               }`}
             >
               <div className="flex items-center justify-between gap-3 border-b bg-secondary/50 p-3.5 sm:p-4 dark:bg-secondary/20">

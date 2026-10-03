@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 // import AchievementsSection from "@/components/AchievementsSection";
 import GitHubGraph from "@/components/GitHubGraph";
+import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import LatestArticlesSection from "@/components/LatestArticlesSection";
 import ContactSection from "@/components/ContactSection";
@@ -31,6 +32,10 @@ export default function Page() {
       <div className="mx-auto max-w-5xl border-x">
         <div className="section-connector" />
       </div>
+      <AnimatedSection delay={200}>
+        <SkillsSection />
+      </AnimatedSection>
+      <div className="section-connector border-x border-input" />
       <AnimatedSection delay={300}>
         <ProjectsSection featuredOnly />
       </AnimatedSection>
