@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
+// import AboutSection from "@/components/AboutSection";
 // import AchievementsSection from "@/components/AchievementsSection";
 import GitHubGraph from "@/components/GitHubGraph";
 import SkillsSection from "@/components/SkillsSection";
@@ -22,7 +22,7 @@ export default function Page() {
         <section className="border-b">
           <div className="mx-auto max-w-5xl border-x">
             <HeroSection />
-            <AboutSection />
+            {/* <AboutSection /> */}
             <Suspense fallback={<GitHubGraphFallback />}>
               <GitHubGraph />
             </Suspense>
