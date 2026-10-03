@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
     slug: "pragmatic-web-dev-tips",
     title: "10 Pragmatic Web Development Tips from Production Trenches",
     excerpt:
-      "Hard-won lessons on real-time state, bundle discipline, resilient API boundaries, and debugging that tutorials rarely cover.",
+      "Hard-won architectural lessons and practical patterns from shipping production systems. Deep-dives into real-time state synchronization, strict bundle size budgets, resilient API contracts with runtime validation, and real-world debugging tactics tutorials rarely touch.",
     date: "2026-02-14",
     author: "monu",
     image:
@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "How SSS (Single Source Structure) Ended My Project Organization Nightmare",
     excerpt:
-      "A simple file structure change that reduced friction and sped up my workflow.",
+      "How adopting the Single Source Structure (SSS) methodology eliminated chaotic project sprawl and daily context switching. A practical breakdown of a unified directory taxonomy that standardizes repositories, environment configs, and documentation for maximum developer flow.",
     date: "2026-01-03",
     author: "monu",
     image:
@@ -40,7 +40,7 @@ export const blogPosts: BlogPost[] = [
     slug: "learning-by-building",
     title: "The Best Way to Learn Programming Is When You Actually Need It",
     excerpt:
-      "Why building real projects creates the fastest feedback loop and the most durable skills.",
+      "An honest look at escaping tutorial hell through demand-driven learning. Why building real, problem-solving applications creates immediate emotional feedback loops, builds durable mental models, and turns abstract syntax into reliable engineering intuition.",
     date: "2025-11-22",
     author: "monu",
     image:

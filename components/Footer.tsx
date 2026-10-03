@@ -1,5 +1,3 @@
-import WebsiteViewsCounter from "./WebsiteViewsCounter";
-
 export default function Footer() {
   return (
     <footer className="mt-14 sm:mt-20 md:mt-24">
@@ -10,9 +8,6 @@ export default function Footer() {
             <span className="text-xs sm:text-sm md:text-base text-muted-foreground">
               © {new Date().getFullYear()} monu. All rights reserved.
             </span>
-            <div className="flex items-center">
-              <WebsiteViewsCounter />
-            </div>
           </div>
 
           <div className="h-8 sm:h-10 border-y border-border/60 stripe-bg-12" />

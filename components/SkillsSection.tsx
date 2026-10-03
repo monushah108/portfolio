@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
-import { Badge } from "./ui/badge";
+import type { ReactNode } from "react";
 import { TechIcons } from "./icons/TechIcons";
 import { cn } from "@/lib/utils";
 
@@ -247,86 +246,43 @@ const marqueeRow2: TechItem[] = [
   ...allTechItems.filter((t) => t.category === "Tools"),
 ];
 
-const categoryList: Array<"Languages" | "Frontend" | "Backend" | "Tools"> = [
-  "Languages",
-  "Frontend",
-  "Backend",
-  "Tools",
-];
-
 export default function SkillsSection({
   sectionClassName,
 }: {
   sectionClassName?: string;
 }) {
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
-
-  const displayedTech =
-    selectedCategory === "all"
-      ? allTechItems
-      : allTechItems.filter((t) => t.category === selectedCategory);
-
   return (
     <section id="skills" className={cn(sectionClassName)}>
       <div className="mx-auto h-full max-w-5xl border-x">
         {/* Section Header */}
-        <div className="flex grow flex-col justify-center border-b bg-linear-to-br from-muted/40 via-background to-muted/20 px-4 py-8 sm:py-12 md:items-center">
+        <div className="flex grow flex-col justify-center border-b bg-linear-to-br from-muted/40 via-background to-muted/20 px-4 py-8 sm:py-12 md:items-center text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
             Capabilities & Stack
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
             Skills & Technologies
           </h2>
-          <p className="mt-1 mb-2 text-sm sm:text-base text-muted-foreground text-center max-w-xl">
+          <p className="mt-1 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
             The core languages, frameworks, backend services, and developer tools I build with
           </p>
-
-          {/* Category Filter Pills */}
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
-            <button
-              onClick={() => setSelectedCategory("all")}
-              className={cn(
-                "rounded-full px-3 py-1 text-xs font-medium transition-all duration-200 border cursor-pointer",
-                selectedCategory === "all"
-                  ? "bg-primary text-primary-foreground border-primary shadow-xs"
-                  : "bg-secondary/40 text-muted-foreground border-border/60 hover:text-foreground hover:bg-secondary"
-              )}
-            >
-              All Tech ({allTechItems.length})
-            </button>
-            {categoryList.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={cn(
-                  "rounded-full px-3 py-1 text-xs font-medium transition-all duration-200 border cursor-pointer",
-                  selectedCategory === cat
-                    ? "bg-primary text-primary-foreground border-primary shadow-xs"
-                    : "bg-secondary/40 text-muted-foreground border-border/60 hover:text-foreground hover:bg-secondary"
-                )}
-              >
-                {cat} ({allTechItems.filter((t) => t.category === cat).length})
-              </button>
-            ))}
-          </div>
         </div>
 
         <div className="relative inset-x-0 h-px w-full border-b" />
 
-        {/* Marquee Animation Showcase with Small Icons */}
-        <div className="relative overflow-hidden py-6 sm:py-8 border-b bg-secondary/15">
+        {/* Marquee Animation Showcase */}
+        <div className="relative overflow-hidden py-8 sm:py-10 border-b bg-secondary/15">
           {/* Left & Right Gradient Fade Masks */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-linear-to-r from-background to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-linear-to-l from-background to-transparent z-10" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-14 sm:w-28 bg-linear-to-r from-background to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-14 sm:w-28 bg-linear-to-l from-background to-transparent z-10" />
 
           {/* Marquee Track 1 (Leftward) */}
-          <div className="animate-marquee gap-3 sm:gap-4 py-1.5">
+          <div className="animate-marquee gap-3 sm:gap-4 py-2">
             {[...marqueeRow1, ...marqueeRow1, ...marqueeRow1].map((tech, idx) => {
               const Icon = tech.icon;
               return (
                 <div
                   key={`m1-${tech.name}-${idx}`}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/70 bg-background/80 hover:bg-secondary/60 hover:border-primary/50 transition-colors shadow-2xs select-none shrink-0"
+                  className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-full border border-border/70 bg-background/90 hover:bg-secondary/70 hover:border-primary/50 transition-colors shadow-2xs select-none shrink-0"
                 >
                   <span className="flex h-4 w-4 sm:h-4.5 sm:w-4.5 items-center justify-center shrink-0">
                     <Icon className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
@@ -334,7 +290,7 @@ export default function SkillsSection({
                   <span className="text-xs sm:text-sm font-medium text-foreground">
                     {tech.name}
                   </span>
-                  <span className="text-[10px] font-mono text-muted-foreground/80 uppercase px-1.5 py-0.2 rounded bg-muted/40">
+                  <span className="text-[10px] font-mono text-muted-foreground/80 uppercase px-1.5 py-0.5 rounded bg-muted/50 border border-border/40">
                     {tech.category}
                   </span>
                 </div>
@@ -343,13 +299,13 @@ export default function SkillsSection({
           </div>
 
           {/* Marquee Track 2 (Rightward / Reverse) */}
-          <div className="animate-marquee-reverse gap-3 sm:gap-4 py-1.5 mt-3">
+          <div className="animate-marquee-reverse gap-3 sm:gap-4 py-2 mt-3.5">
             {[...marqueeRow2, ...marqueeRow2, ...marqueeRow2].map((tech, idx) => {
               const Icon = tech.icon;
               return (
                 <div
                   key={`m2-${tech.name}-${idx}`}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/70 bg-background/80 hover:bg-secondary/60 hover:border-primary/50 transition-colors shadow-2xs select-none shrink-0"
+                  className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-full border border-border/70 bg-background/90 hover:bg-secondary/70 hover:border-primary/50 transition-colors shadow-2xs select-none shrink-0"
                 >
                   <span className="flex h-4 w-4 sm:h-4.5 sm:w-4.5 items-center justify-center shrink-0">
                     <Icon className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
@@ -357,41 +313,13 @@ export default function SkillsSection({
                   <span className="text-xs sm:text-sm font-medium text-foreground">
                     {tech.name}
                   </span>
-                  <span className="text-[10px] font-mono text-muted-foreground/80 uppercase px-1.5 py-0.2 rounded bg-muted/40">
+                  <span className="text-[10px] font-mono text-muted-foreground/80 uppercase px-1.5 py-0.5 rounded bg-muted/50 border border-border/40">
                     {tech.category}
                   </span>
                 </div>
               );
             })}
           </div>
-        </div>
-
-        {/* Categorized Tech Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 divide-x divide-y divide-border/60">
-          {displayedTech.map((tech) => {
-            const Icon = tech.icon;
-            return (
-              <div
-                key={tech.name}
-                className="group flex items-center justify-between p-3 sm:p-4 hover:bg-secondary/20 transition-colors"
-              >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-md border border-border/60 bg-background/80 shrink-0 group-hover:scale-105 group-hover:border-primary/40 transition-transform">
-                    <Icon className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
-                  </div>
-                  <span className="text-xs sm:text-sm font-medium text-foreground truncate group-hover:text-primary transition-colors">
-                    {tech.name}
-                  </span>
-                </div>
-                <Badge
-                  variant="outline"
-                  className="text-[10px] font-mono text-muted-foreground border-border/60 shrink-0"
-                >
-                  {tech.category}
-                </Badge>
-              </div>
-            );
-          })}
         </div>
 
         {/* Bottom Stripe Accent */}
